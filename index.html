@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extended Mood Generator 🎉</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <button class="mode-toggle" id="modeToggle">🌓</button>
+  
+  <h1>🎨 Mood-Based Generator</h1>
+  <p class="subtitle">Find the perfect colors, emojis, and more based on your mood!</p>
+  <p>Scroll to select 😊</p>
+  <div class="bg">
+      <div id="image">
+        <img src="bg.png" alt="">
+      </div>
+  </div>
+  
+  <div class="mood-buttons">
+    <button onclick="updateContent('happy')" data-mood="happy">😊 Happy</button>
+    <button onclick="updateContent('calm')" data-mood="calm">😌 Calm</button>
+    <button onclick="updateContent('energetic')" data-mood="energetic">⚡ Energetic</button>
+    <button onclick="updateContent('sad')" data-mood="sad">😢 Sad</button>
+    <button onclick="updateContent('romantic')" data-mood="romantic">❤️ Romantic</button>
+    <button onclick="updateContent('mysterious')" data-mood="mysterious">🔮 Mysterious</button>
+    <button onclick="updateContent('playful')" data-mood="playful">🎮 Playful</button>
+    <button onclick="updateContent('custom')" data-mood="custom">✨ Custom</button>
+  </div>
+  
+  <div class="sections">
+    <section>
+      <div class="section-title">
+        <h2>🎨 Color Palette</h2>
+      </div>
+      <div id="color-section" class="items"></div>
+    </section>
+    
+    <section>
+      <div class="section-title">
+        <h2>😃 Emojis</h2>
+      </div>
+      <div id="emoji-section" class="items"></div>
+    </section>
+    
+    
+    
+    <section>
+      <div class="section-title">
+        <h2>⚡ Animations</h2>
+      </div>
+      <div id="animation-section" class="items"></div>
+    </section>
+    
+   
+    
+    <section>
+      <div class="section-title">
+        <h2>📝 Fonts</h2>
+      </div>
+      <div id="font-section" class="items"></div>
+    </section>
+  </div>
+  
+  <div id="customThemeSection" class="theme-creator" style="display: none;">
+    <h2>✨ Create Your Custom Mood</h2>
+    <div class="theme-inputs">
+      <div class="input-group">
+        <label for="custom-name">Mood Name:</label>
+        <input type="text" id="custom-name" placeholder="My Mood">
+      </div>
+      
+      <div class="input-group">
+        <label for="custom-color1">Color 1:</label>
+        <input type="color" id="custom-color1" value="#FF5733">
+      </div>
+      
+      <div class="input-group">
+        <label for="custom-color2">Color 2:</label>
+        <input type="color" id="custom-color2" value="#33FFC4">
+      </div>
+      
+      <div class="input-group">
+        <label for="custom-color3">Color 3:</label>
+        <input type="color" id="custom-color3" value="#337BFF">
+      </div>
+      
+      <div class="input-group">
+        <label for="custom-color4">Color 4:</label>
+        <input type="color" id="custom-color4" value="#F033FF">
+      </div>
+    </div>
+    
+    <div class="color-preview" id="colorPreview">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    
+    <div style="margin-top: 20px;">
+      <button onclick="saveCustomTheme()" style="padding: 10px 20px; background: #4CAF50; border: none; color: white; border-radius: 4px; cursor: pointer;">Save Custom Mood</button>
+    </div>
+  </div>
+  
+  
+  
+  <div class="quote-box">
+    <h2>💭 Mood Quote</h2>
+    <div class="quote-text" id="quote-text">Select a mood to get inspired</div>
+    <div class="quote-author" id="quote-author"></div>
+    <button onclick="generateQuote()" style="margin-top: 15px; padding: 8px 16px; background: #333; border: none; color: white; border-radius: 4px; cursor: pointer;">New Quote</button>
+  </div>
+  
+  <footer>
+    <p>Made with ❤️ | Click any item to copy to clipboard</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
